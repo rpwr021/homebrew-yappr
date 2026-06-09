@@ -1,10 +1,10 @@
 cask "yappr" do
-  version "0.1.7"
-  sha256 "40c11f55d538fe59513f60d05ed112ee22abdfdbbfd727a779f8349499704d7b"
+  version "0.1.8"
+  sha256 "2ac6271a229932ffa29eb1b9477b3be5c261dcfbe3e761c141fd88cd409de72e"
 
   url "https://github.com/rpwr021/yappr/releases/download/v#{version}/Yappr-macos.zip"
   name "Yappr"
-  desc "Local push-to-talk dictation and voice chat for macOS"
+  desc "Local push-to-talk dictation and voice chat"
   homepage "https://github.com/rpwr021/yappr"
 
   livecheck do
@@ -12,9 +12,9 @@ cask "yappr" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Yappr.app"
 
-  zap trash: ["~/.yappr"]
+  zap trash: "~/.yappr"
 end
