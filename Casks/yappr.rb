@@ -1,6 +1,6 @@
 cask "yappr" do
-  version "0.1.12"
-  sha256 "d30770938a41bd0e82e65191eeaa5fadc75e0742c3546f451c77d15c0cbeea03"
+  version "0.1.13"
+  sha256 "ede6bfe2feadcbf7a02b2b7337cf32fc7ef3ebcb222259fca8aeaaccf12f5c79"
 
   url "https://github.com/rpwr021/yappr/releases/download/v#{version}/Yappr-macos.zip"
   name "Yappr"
@@ -16,6 +16,13 @@ cask "yappr" do
   depends_on macos: :ventura
 
   app "Yappr.app"
+
+  # The app is ad-hoc signed (not notarized), so strip the download quarantine
+  # to skip the Gatekeeper "unverified developer" wall on first launch.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Yappr.app"]
+  end
 
   zap trash: "~/.yappr"
 
