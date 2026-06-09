@@ -12,9 +12,15 @@ cask "yappr" do
     strategy :github_latest
   end
 
+  depends_on formula: "llama.cpp"
   depends_on macos: :ventura
 
   app "Yappr.app"
 
   zap trash: "~/.yappr"
+
+  caveats <<~EOS
+    On first launch, Yappr downloads a multi-GB speech model from Hugging Face.
+    Watch the menu-bar icon for progress; the first run can take several minutes.
+  EOS
 end
