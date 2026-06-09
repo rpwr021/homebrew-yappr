@@ -1,6 +1,6 @@
 cask "yappr" do
-  version "0.1.11"
-  sha256 "a2db6a6f6420da46509fc2e5cc67b5932470b17a8cb628eaa14095bd9534beab"
+  version "0.1.12"
+  sha256 "d30770938a41bd0e82e65191eeaa5fadc75e0742c3546f451c77d15c0cbeea03"
 
   url "https://github.com/rpwr021/yappr/releases/download/v#{version}/Yappr-macos.zip"
   name "Yappr"
@@ -20,6 +20,10 @@ cask "yappr" do
   zap trash: "~/.yappr"
 
   caveats <<~EOS
+    Push-to-talk hotkeys:
+      Dictate:  hold Right Option
+      Chat:     hold Cmd + Right Option
+
     On first launch, Yappr downloads a multi-GB speech model from Hugging Face.
     Watch the menu-bar icon for progress; the first run can take several minutes.
   EOS
