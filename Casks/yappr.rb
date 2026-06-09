@@ -12,9 +12,9 @@ cask "yappr" do
     strategy :github_latest
   end
 
+  depends_on macos: ">= :ventura"
+
   app "Yappr.app"
 
-  zap trash: [
-    "~/.yappr",
-  ]
+  zap trash: ["~/.yappr"]
 end
