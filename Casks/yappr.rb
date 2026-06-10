@@ -1,6 +1,6 @@
 cask "yappr" do
-  version "0.1.15"
-  sha256 "95e07724dfdf346b3f5e38f5bd978776563dc5dc9e9e9da4432005c88e994e19"
+  version "0.1.16"
+  sha256 "45c65d95f3b445e99102821a48ea38d3d51a7c00207d3c72975f28f885a79c98"
 
   url "https://github.com/rpwr021/yappr/releases/download/v#{version}/Yappr-macos.zip"
   name "Yappr"
